@@ -1,4 +1,4 @@
-import { type Verse } from "../utils/getVerse";
+import { type Verse } from "../utils/verse";
 export function Verse({ text, reference }: Verse) {
   return (
     <div className="verse">

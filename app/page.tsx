@@ -1,14 +1,14 @@
-import { getVerse } from "../utils/getVerse";
-import { FeaturedVerse } from "@/components/featured-verse";
+import { getRandomVerse, getSavedVerses } from "../utils/verse";
+import { VerseDisplay } from "@/components/verse-display";
 
 export default async function Home() {
-  const initialVerse = await getVerse();
+  const initialVerse = await getRandomVerse("http://localhost:3000");
 
   return (
     <main>
       <header>
         <h1>Verse Explorer</h1>
-        <FeaturedVerse initialVerse={initialVerse} />
+        <VerseDisplay initialVerse={initialVerse} />
       </header>
     </main>
   );
