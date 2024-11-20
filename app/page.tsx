@@ -1,16 +1,14 @@
-import { Verse } from "@/components/verse";
 import { getVerse } from "../utils/getVerse";
+import { FeaturedVerse } from "@/components/featured-verse";
 
 export default async function Home() {
-  const verse = await getVerse();
-  console.log(verse);
+  const initialVerse = await getVerse();
+
   return (
     <main>
       <header>
         <h1>Verse Explorer</h1>
-        <div className="featured-verse">
-          <Verse {...verse} />
-        </div>
+        <FeaturedVerse initialVerse={initialVerse} />
       </header>
     </main>
   );
